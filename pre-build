@@ -19,7 +19,8 @@ COMMAND=$(cat <<EOF
     ldconfig &&
     cd .. &&
     rm -rf $FILE_NAME
-EOF)
+EOF
+)
 
 id=$(docker run -d $IMAGE /bin/bash -c "$COMMAND")
 test $(docker wait $id) -eq 0
